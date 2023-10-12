@@ -5,9 +5,9 @@ def complex_delete(a_dictionary, value):
         for key in tmp_dic.keys():
             if tmp_dic[key] == value:
                 a_dictionary.pop(key)
+    return a_dictionary
 
 
-complex_delete = __import__('102-complex_delete').complex_delete
 print_sorted_dictionary = \
     __import__('6-print_sorted_dictionary').print_sorted_dictionary
 
