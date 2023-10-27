@@ -1,0 +1,41 @@
+add_integer Documentation
+
+Function:
+    add_integer(a, b=98)
+
+Description:
+    Adds two integers and returns the result.
+
+Parameters:
+    - a: An integer or float.
+    - b (optional): An integer or float. Defaults to 98.
+
+Returns:
+    int: The addition of a and b.
+
+Raises:
+    TypeError: If a or b is not an integer or float.
+
+Example Usage:
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(3, 5)
+    8
+
+    >>> add_integer(2.5, 3)
+    5
+
+    >>> add_integer(5.5, 3.5)
+    8
+
+    >>> add_integer('not_an_integer', 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(5, 'not_an_integer')
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+    
+    >>> add_integer(2)
+    100
