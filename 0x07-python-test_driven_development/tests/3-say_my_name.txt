@@ -1,0 +1,56 @@
+======================================================================
+                    SAY MY NAME FUNCTION DOCUMENTATION
+======================================================================
+
+Description:
+-------------
+The say_my_name function takes a first name and an optional last name as input, and prints a formatted string representing the full name.
+
+Function Signature:
+-------------------
+def say_my_name(first_name, last_name="")
+
+Arguments:
+-----------
+- first_name (str): The first name.
+- last_name (str, optional): The last name. Default is an empty string.
+
+Returns:
+---------
+- None: The function prints the formatted string and does not return any value.
+
+Raises:
+--------
+- TypeError: If either input is not a string.
+
+Examples:
+----------
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+1. Normal Case:
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+2. Case with Default Last Name:
+>>> say_my_name("Alice")
+My name is Alice 
+
+3. Edge Case: Non-String First Name:
+>>> say_my_name(123, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+4. Edge Case: Non-String Last Name:
+>>> say_my_name("Bob", 456)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+5. Edge Case: Non-String First and Last Names:
+>>> say_my_name(789, 123)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+======================================================================
