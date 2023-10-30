@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""Unittest for max_integer([..])
+"""
 import unittest
-
 max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
-
     def test_unordered_list(self):
         unordered_list = [5, 4, 13, 7]
         self.assertEqual(max_integer(unordered_list), 13)
@@ -17,6 +17,10 @@ class TestMaxInteger(unittest.TestCase):
         empty_list = []
         self.assertEqual(max_integer(empty_list), None)
 
+    def test_one_element_list(self):
+        list = [4]
+        self.assertEqual(max_integer(list), 4)
+
     def test_no_arguments(self):
         self.assertEqual(max_integer(), None)
 
@@ -27,6 +31,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_str(self):
         str = "abcdzef"
         self.assertEqual(max_integer(str), "z")
+
+    def test_empty_str(self):
+        self.assertEqual(max_integer(''), None)
 
 if __name__ == '__main__':
     unittest.main()
