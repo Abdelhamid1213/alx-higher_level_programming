@@ -50,9 +50,9 @@ class Rectangle():
 
     def __str__(self):
         """Return sting to be printed"""
-        if self.__width == 0 or self.__height == 0:
-            return 0
         buffer = ''
+        if self.__width == 0 or self.__height == 0:
+            return buffer
         for _ in range(self.__height):
             for _ in range(self.width):
                 buffer += '#'
