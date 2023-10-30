@@ -57,7 +57,7 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return buffer
         for _ in range(self.__height):
-            for _ in range(self.width):
+            for _ in range(self.__width):
                 buffer += str(self.print_symbol)
             buffer += '\n'
         return buffer[:-1]
