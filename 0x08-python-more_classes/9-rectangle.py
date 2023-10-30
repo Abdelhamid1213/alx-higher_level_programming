@@ -11,7 +11,7 @@ class Rectangle():
         """default value when init"""
         self.height = height
         self.width = width
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -64,12 +64,12 @@ class Rectangle():
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
-        return f'Rectangle({self.__width}, {self.__height})'
+        return f'{type(self)}({self.__width}, {self.__height})'
 
     def __del__(self):
         """Print a message for every deletion of a Rectangle."""
         print('Bye rectangle...')
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -85,4 +85,4 @@ class Rectangle():
     @classmethod
     def square(cls, size=0):
         """Returns a new Rectangle instance with width == height == size"""
-        return cls(size, size)
+        return (cls(size, size))
