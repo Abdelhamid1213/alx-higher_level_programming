@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def copy_list(l):
-    return [x for x in l if l]
+def copy_list(a):
+    return [x for x in a if a]
