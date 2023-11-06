@@ -1,3 +1,5 @@
+    >>> MyList = __import__('1-my_list').MyList
+    
 Checking for module docstring:
     >>> m = __import__("1-my_list").__doc__
     >>> len(m) > 1
@@ -74,4 +76,4 @@ Checking for too many arguments:
     >>> l.print_sorted(1)
     Traceback (most recent call last):
     ...
-    TypeError: print_sorted() takes 1 positional argument but 2 were given
+    TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
