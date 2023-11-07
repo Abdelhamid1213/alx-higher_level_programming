@@ -21,7 +21,7 @@ class Student:
                     pass
             return new_dict
         return self.__dict__
-    
+
     def reload_from_json(self, json):
         """replaces all attributes of the Student instance"""
         for k, v in json.items():
