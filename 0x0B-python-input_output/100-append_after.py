@@ -5,15 +5,11 @@
 def append_after(filename="", search_string="", new_string=""):
     """inserts a line of text to a file, after each line
     containing a specific string"""
-    if not all((filename, search_string, new_string)):
-        print("Error: All parameters must be provided.")
-        return
-
-    with open(filename, 'r') as file:
-        lines = file.readlines()
-
-    with open(filename, 'w') as file:
-        for line in lines:
-            file.write(line)
+    text = ""
+    with open(filename) as r:
+        for line in r:
+            text += line
             if search_string in line:
-                file.write(new_string + '\n')
+                text += new_string
+    with open(filename, "w") as w:
+        w.write(text)
