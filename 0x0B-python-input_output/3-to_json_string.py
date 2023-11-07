@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Containt a function append_write"""
+"""Containt a function to_json_string"""
 import json
 
 
