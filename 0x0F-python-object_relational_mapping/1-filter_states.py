@@ -40,7 +40,8 @@ def filter_states(username, password, database):
         None
 
     Prints:
-        Results of the query in the format (id, name).
+        Results of the query in the format (id, name) for states starting
+        with 'N'.
     """
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          passwd=password, db=database)
