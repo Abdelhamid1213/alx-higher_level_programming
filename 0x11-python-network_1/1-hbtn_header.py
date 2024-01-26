@@ -9,10 +9,6 @@ A script that sends a request to a URL and prints the value of the
 Usage: python3 1-hbtn_header.py <URL>
 """
 
-if len(sys.argv) != 2:
-    print(f'Usage: {sys.argv[0]} <URL>')
-    quit()
-
 url = sys.argv[1]
 
 with urllib.request.urlopen(url) as response:

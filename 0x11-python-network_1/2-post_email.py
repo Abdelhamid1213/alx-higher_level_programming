@@ -8,10 +8,6 @@ import sys
 Usage: python3 2-post_email.py <URL> <email>
 """
 
-if len(sys.argv) != 3:
-    print(f'Usage: {sys.argv[0]} <URL> <email>')
-    quit()
-
 url = sys.argv[1]
 data = {
     'email': sys.argv[2]
