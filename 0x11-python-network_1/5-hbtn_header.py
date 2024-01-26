@@ -2,7 +2,10 @@
 import requests
 import sys
 
-""" """
+"""
+This script sends a GET request to a specified URL and retrieves the value
+of the 'X-Request-Id' header from the response.
+"""
 
 if len(sys.argv) != 2:
     print(f'Usage: {sys.argv[0]} <URL>')
