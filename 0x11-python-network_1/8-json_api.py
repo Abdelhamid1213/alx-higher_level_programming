@@ -17,7 +17,7 @@ if len(sys.argv) != 2:
 
 url = "http://0.0.0.0:5000/search_user"
 data = {
-    'q': (sys.argv[1] if len(sys.argv) == 2 else "")
+    'q': (sys.argv[1] if len(sys.argv) > 2 else "")
 }
 
 with requests.post(url, data) as response:
