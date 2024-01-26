@@ -6,7 +6,12 @@ import sys
 """
 This script sends a GET request to a URL provided as a command-line argument
 and prints the response body.
-If the server returns an HTTP error code, it prints the error code."""
+If the server returns an HTTP error code, it prints the error code.
+"""
+
+if len(sys.argv) != 2:
+    print(f'Usage: {sys.argv[0]} <URL>')
+    quit()
 
 try:
     with urllib.request.urlopen(sys.argv[1]) as response:
