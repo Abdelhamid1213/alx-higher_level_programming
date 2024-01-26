@@ -2,9 +2,9 @@
 import requests
 import sys
 
-"""This script sends a POST request to a specified URL with an email parameter.
-
-Usage: python3 2-post_email.py <URL> <email>
+"""
+This script sends a POST request to a specified URL with an email parameter.
+The URL and email are provided as command-line arguments.
 """
 
 if len(sys.argv) != 3:
