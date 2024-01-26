@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-import requests
-import sys
-
 """
 This script sends a POST request to a specified URL with a search query
 parameter.
@@ -11,6 +8,8 @@ or "No result" if no result is found. If the response is not a valid JSON,
 it prints "Not a valid JSON".
 """
 
+import requests
+import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
