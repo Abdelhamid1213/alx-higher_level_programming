@@ -2,7 +2,9 @@
 import urllib.request
 import sys
 
-"""A script that sends a request to a URL and prints the value of the 'X-Request-Id' header in the response.
+"""
+A script that sends a request to a URL and prints the value of the
+'X-Request-Id' header in the response.
 
 Usage: python3 1-hbtn_header.py <URL>
 """
