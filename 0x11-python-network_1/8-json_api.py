@@ -1,31 +1,24 @@
 #!/usr/bin/python3
 """
-This script sends a POST request to a specified URL with a search query
-parameter.
-
-It expects a JSON response and prints the ID and name of the result if found,
-or "No result" if no result is found. If the response is not a valid JSON,
-it prints "Not a valid JSON".
+This script sends a POST request to a specified URL with a letter as parameter.
+It then receives a JSON response and prints the ID and name from the response.
+If the response is empty, it prints "No result".
+If the response is not a valid JSON, it prints "Not a valid JSON".
 """
-
-import requests
 import sys
+import requests
+
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print(f'Usage: {sys.argv[0]} <letter as a parameter>')
-        quit()
+    letter = "" if len(sys.argv) == 1 else sys.argv[1]
+    payload = {"q": letter}
 
-    url = "http://0.0.0.0:5000/search_user"
-    data = {
-        'q': "" if len(sys.argv) == 1 else sys.argv[1]
-    }
-
+    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
-        response = requests.post(url, data).json()
+        response = r.json()
         if response == {}:
             print("No result")
         else:
-            print(f"[{response.get('id')}] {response.get('name')}")
+            print("[{}] {}".format(response.get("id"), response.get("name")))
     except ValueError:
         print("Not a valid JSON")
