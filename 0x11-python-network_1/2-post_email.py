@@ -3,7 +3,10 @@ import urllib.request
 import urllib.parse
 import sys
 
-""" """
+"""This script sends a POST request to a specified URL with an email parameter.
+
+Usage: python3 2-post_email.py <URL> <email>
+"""
 
 if len(sys.argv) != 3:
     print(f'Usage: {sys.argv[0]} <URL> <email>')
