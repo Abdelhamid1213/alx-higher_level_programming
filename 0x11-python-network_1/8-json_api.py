@@ -11,6 +11,10 @@ or "No result" if no result is found. If the response is not a valid JSON,
 it prints "Not a valid JSON".
 """
 
+if len(sys.argv) != 2:
+    print(f'Usage: {sys.argv[0]} <letter as a parameter>')
+    quit()
+
 url = "http://0.0.0.0:5000/search_user"
 data = {
     'q': (sys.argv[1] if len(sys.argv) == 2 else "")
