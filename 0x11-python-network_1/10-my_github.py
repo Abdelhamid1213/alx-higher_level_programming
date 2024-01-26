@@ -15,6 +15,9 @@ The user ID is then extracted from the response and printed to the console.
 """
 
 if __name__ == "__main__":
-    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
-    r = requests.get("https://api.github.com/user", auth=auth)
-    print(r.json().get("id"))
+    username = sys.argv[1]
+    password = sys.argv[2]
+
+    token = HTTPBasicAuth(username, password)
+    request = requests.get('https://api.github.com/user', auth=token)
+    print(request.json().get('id'))
