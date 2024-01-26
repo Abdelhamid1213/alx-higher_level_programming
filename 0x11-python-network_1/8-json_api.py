@@ -17,15 +17,14 @@ if len(sys.argv) != 2:
 
 url = "http://0.0.0.0:5000/search_user"
 data = {
-    'q': (sys.argv[1] if len(sys.argv) >= 2 else "")
+    'q': "" if len(sys.argv) == 1 else sys.argv[1]
 }
 
-with requests.post(url, data) as response:
-    try:
-        json_data = response.json()
-        if json_data:
-            print(f"[{json_data['id']}] {json_data['name']}")
-        else:
-            print("No result")
-    except ValueError:
-        print("Not a valid JSON")
+try:
+    response = requests.post(url, data).json()
+    if response == {}:
+        print("No result")
+    else:
+        print(f"[{response.get('id')}] {response.get('name')}")
+except ValueError:
+    print("Not a valid JSON")
