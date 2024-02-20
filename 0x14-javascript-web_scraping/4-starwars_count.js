@@ -6,12 +6,11 @@ let c = 0;
 
 request(route, (error, response, body) => {
   if (!error && response.statusCode === 200) {
-    const data = JSON.parse(body);
-    for (const film of data.results) {
-      if (film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-        c++;
-      }
-    }
-    console.log(c);
+    const results = JSON.parse(body).results;
+    console.log(results.reduce((count, movie) => {
+      return movie.characters.find((character) => character.endsWith('/18/'))
+        ? count + 1
+        : count;
+    }, 0));
   }
 });
